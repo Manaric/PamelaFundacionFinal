@@ -1,0 +1,60 @@
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\PamelaFundacionFinal.dll.config
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\PamelaFundacionFinal.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\PamelaFundacionFinal.pdb
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\Antlr3.Runtime.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\EntityFramework.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\EntityFramework.SqlServer.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\Microsoft.Web.Infrastructure.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\Newtonsoft.Json.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.Helpers.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.Mvc.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.Optimization.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.Razor.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.WebPages.Deployment.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.WebPages.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.WebPages.Razor.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\WebGrease.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\EntityFramework.xml
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\EntityFramework.SqlServer.xml
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.Helpers.xml
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.Mvc.xml
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.Optimization.xml
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.Razor.xml
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.WebPages.xml
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.WebPages.Deployment.xml
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\System.Web.WebPages.Razor.xml
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\Antlr3.Runtime.pdb
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\bin\Newtonsoft.Json.xml
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\obj\Debug\PamelaFundacionFinal.csprojResolveAssemblyReference.cache
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\obj\Debug\PamelaFundacionFinal.dll
+c:\users\lenovo-g50-30\documents\visual studio 2013\Projects\PamelaFundacionFinal\PamelaFundacionFinal\obj\Debug\PamelaFundacionFinal.pdb
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\PamelaFundacionFinal.dll.config
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\PamelaFundacionFinal.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\PamelaFundacionFinal.pdb
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\Antlr3.Runtime.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\EntityFramework.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\EntityFramework.SqlServer.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\Newtonsoft.Json.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.Helpers.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.Mvc.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.Optimization.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.Razor.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.WebPages.Deployment.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.WebPages.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.WebPages.Razor.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\WebGrease.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\EntityFramework.xml
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\EntityFramework.SqlServer.xml
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.Helpers.xml
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.Mvc.xml
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.Optimization.xml
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.Razor.xml
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.WebPages.xml
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.WebPages.Deployment.xml
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\System.Web.WebPages.Razor.xml
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\Antlr3.Runtime.pdb
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\bin\Newtonsoft.Json.xml
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\obj\Debug\PamelaFundacionFinal.csprojResolveAssemblyReference.cache
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\obj\Debug\PamelaFundacionFinal.dll
+C:\Users\LENOVO-G50-30\Documents\Visual Studio 2013\Projects\PamelaFundacionFinal - copia\PamelaFundacionFinal\obj\Debug\PamelaFundacionFinal.pdb

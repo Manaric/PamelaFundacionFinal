@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f96f626b51004d1d85b7149831c0d748" Name="Diagram1">
+        <EntityTypeShape EntityType="PamelaFundacionModel.Beca" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PamelaFundacionModel.Becado" Width="1.5" PointX="6" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="PamelaFundacionModel.Escuela" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PamelaFundacionModel.Horario" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PamelaFundacionModel.HorasReportadas" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="PamelaFundacionModel.Mensualidades" Width="1.5" PointX="3.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PamelaFundacionModel.Organizacion" Width="1.5" PointX="3.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PamelaFundacionModel.Pagos" Width="1.5" PointX="8.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PamelaFundacionModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PamelaFundacionModel.Trabajo" Width="1.5" PointX="1.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PamelaFundacionModel.Tutor" Width="1.5" PointX="3.75" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="PamelaFundacionModel.FK_Beca_Escuela" ManuallyRouted="false" />
+        <AssociationConnector Association="PamelaFundacionModel.FK_Becado_Escuela" ManuallyRouted="false" />
+        <AssociationConnector Association="PamelaFundacionModel.FK_Becado_Mensualidades" ManuallyRouted="false" />
+        <AssociationConnector Association="PamelaFundacionModel.FK_Becado_Organizacion" ManuallyRouted="false" />
+        <AssociationConnector Association="PamelaFundacionModel.FK_Becado_Tutor" ManuallyRouted="false" />
+        <AssociationConnector Association="PamelaFundacionModel.FK_Horario_Becado" ManuallyRouted="false" />
+        <AssociationConnector Association="PamelaFundacionModel.FK_HorasReportadas_Becado" ManuallyRouted="false" />
+        <AssociationConnector Association="PamelaFundacionModel.FK_Pagos_Becado" ManuallyRouted="false" />
+        <AssociationConnector Association="PamelaFundacionModel.FK_Horario_Organizacion" ManuallyRouted="false" />
+        <AssociationConnector Association="PamelaFundacionModel.FK_Tutor_Trabajo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

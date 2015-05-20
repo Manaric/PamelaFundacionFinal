@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PamelaFundacionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Beca">
+    <Key>
+      <PropertyRef Name="Categoria" />
+      <PropertyRef Name="Escuela_ID" />
+    </Key>
+    <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Escuela_ID" Type="Int32" Nullable="false" />
+    <Property Name="Beca1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Horas" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Escuela" Relationship="Self.FK_Beca_Escuela" FromRole="Beca" ToRole="Escuela" />
+  </EntityType>
+  <EntityType Name="Becado">
+    <Key>
+      <PropertyRef Name="Becado_ID" />
+    </Key>
+    <Property Name="Becado_ID" Type="Int32" Nullable="false" />
+    <Property Name="Tutor_ID" Type="Int32" Nullable="false" />
+    <Property Name="Escuela_ID" Type="Int32" Nullable="false" />
+    <Property Name="Organizacion_ID" Type="Int32" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Edad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ApellidoPaterno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ApellidoMaterno" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Promedio" Type="Double" Nullable="false" />
+    <Property Name="Horas" Type="Int32" Nullable="false" />
+    <Property Name="Actividad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Escuela" Relationship="Self.FK_Becado_Escuela" FromRole="Becado" ToRole="Escuela" />
+    <NavigationProperty Name="Mensualidades" Relationship="Self.FK_Becado_Mensualidades" FromRole="Becado" ToRole="Mensualidades" />
+    <NavigationProperty Name="Organizacion" Relationship="Self.FK_Becado_Organizacion" FromRole="Becado" ToRole="Organizacion" />
+    <NavigationProperty Name="Tutor" Relationship="Self.FK_Becado_Tutor" FromRole="Becado" ToRole="Tutor" />
+    <NavigationProperty Name="Horario" Relationship="Self.FK_Horario_Becado" FromRole="Becado" ToRole="Horario" />
+    <NavigationProperty Name="HorasReportadas" Relationship="Self.FK_HorasReportadas_Becado" FromRole="Becado" ToRole="HorasReportadas" />
+    <NavigationProperty Name="Pagos" Relationship="Self.FK_Pagos_Becado" FromRole="Becado" ToRole="Pagos" />
+  </EntityType>
+  <EntityType Name="Escuela">
+    <Key>
+      <PropertyRef Name="Escuela_ID" />
+    </Key>
+    <Property Name="Escuela_ID" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Beca" Relationship="Self.FK_Beca_Escuela" FromRole="Escuela" ToRole="Beca" />
+    <NavigationProperty Name="Becado" Relationship="Self.FK_Becado_Escuela" FromRole="Escuela" ToRole="Becado" />
+  </EntityType>
+  <EntityType Name="Horario">
+    <Key>
+      <PropertyRef Name="Organizacion_ID" />
+      <PropertyRef Name="Becado_ID" />
+    </Key>
+    <Property Name="Organizacion_ID" Type="Int32" Nullable="false" />
+    <Property Name="Becado_ID" Type="Int32" Nullable="false" />
+    <Property Name="Actividad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Lu" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Ma" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Mi" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Ju" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Vi" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Sa" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Horas" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Becado" Relationship="Self.FK_Horario_Becado" FromRole="Horario" ToRole="Becado" />
+    <NavigationProperty Name="Organizacion" Relationship="Self.FK_Horario_Organizacion" FromRole="Horario" ToRole="Organizacion" />
+  </EntityType>
+  <EntityType Name="HorasReportadas">
+    <Key>
+      <PropertyRef Name="Becario_ID" />
+      <PropertyRef Name="HorasTotal" />
+    </Key>
+    <Property Name="Becario_ID" Type="Int32" Nullable="false" />
+    <Property Name="HorasTotal" Type="Int32" Nullable="false" />
+    <Property Name="Mensualidad1" Type="Int32" />
+    <Property Name="Mensualidad2" Type="Int32" />
+    <Property Name="Mensualidad3" Type="Int32" />
+    <Property Name="Mensualidad4" Type="Int32" />
+    <Property Name="Mensualidad5" Type="Int32" />
+    <NavigationProperty Name="Becado" Relationship="Self.FK_HorasReportadas_Becado" FromRole="HorasReportadas" ToRole="Becado" />
+  </EntityType>
+  <EntityType Name="Mensualidades">
+    <Key>
+      <PropertyRef Name="Categoria" />
+    </Key>
+    <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Beca" Type="Int32" Nullable="false" />
+    <Property Name="Mensualidad1" Type="Int32" />
+    <Property Name="Mensualidad2" Type="Int32" />
+    <Property Name="Mensualidad3" Type="Int32" />
+    <Property Name="Mensualidad4" Type="Int32" />
+    <Property Name="Mensualidad5" Type="Int32" />
+    <NavigationProperty Name="Becado" Relationship="Self.FK_Becado_Mensualidades" FromRole="Mensualidades" ToRole="Becado" />
+  </EntityType>
+  <EntityType Name="Organizacion">
+    <Key>
+      <PropertyRef Name="Organizacion_ID" />
+    </Key>
+    <Property Name="Organizacion_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Celular" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Becado" Relationship="Self.FK_Becado_Organizacion" FromRole="Organizacion" ToRole="Becado" />
+    <NavigationProperty Name="Horario" Relationship="Self.FK_Horario_Organizacion" FromRole="Organizacion" ToRole="Horario" />
+  </EntityType>
+  <EntityType Name="Pagos">
+    <Key>
+      <PropertyRef Name="Becado_ID" />
+    </Key>
+    <Property Name="Becado_ID" Type="Int32" Nullable="false" />
+    <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Int32" Nullable="false" />
+    <Property Name="Mensualidad1" Type="Int32" />
+    <Property Name="Mensualidad1_pag" Type="Boolean" />
+    <Property Name="Mensualidad2" Type="Int32" />
+    <Property Name="Mensualidad2_pag" Type="Boolean" />
+    <Property Name="Mensualidad3" Type="Int32" />
+    <Property Name="Mensualidad3_pag" Type="Boolean" />
+    <Property Name="Mensualidad4" Type="Int32" />
+    <Property Name="Mensualidad4_pag" Type="Boolean" />
+    <Property Name="Mensualidad5" Type="Int32" />
+    <Property Name="Mensualidad5_pag" Type="Boolean" />
+    <NavigationProperty Name="Becado" Relationship="Self.FK_Pagos_Becado" FromRole="Pagos" ToRole="Becado" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Trabajo">
+    <Key>
+      <PropertyRef Name="Nombre" />
+    </Key>
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Telefono" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Tutor" Relationship="Self.FK_Tutor_Trabajo" FromRole="Trabajo" ToRole="Tutor" />
+  </EntityType>
+  <EntityType Name="Tutor">
+    <Key>
+      <PropertyRef Name="Tutor_ID" />
+    </Key>
+    <Property Name="Tutor_ID" Type="Int32" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ApellidoPaterno" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ApellidoMaterno" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Trabajo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Puesto" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Correo" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Celular" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TotalFamilia" Type="Int32" Nullable="false" />
+    <Property Name="HorasFamilia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Becado" Relationship="Self.FK_Becado_Tutor" FromRole="Tutor" ToRole="Becado" />
+    <NavigationProperty Name="Trabajo1" Relationship="Self.FK_Tutor_Trabajo" FromRole="Tutor" ToRole="Trabajo" />
+  </EntityType>
+  <Association Name="FK_Beca_Escuela">
+    <End Role="Escuela" Type="Self.Escuela" Multiplicity="1" />
+    <End Role="Beca" Type="Self.Beca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Escuela">
+        <PropertyRef Name="Escuela_ID" />
+      </Principal>
+      <Dependent Role="Beca">
+        <PropertyRef Name="Escuela_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Becado_Escuela">
+    <End Role="Escuela" Type="Self.Escuela" Multiplicity="1" />
+    <End Role="Becado" Type="Self.Becado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Escuela">
+        <PropertyRef Name="Escuela_ID" />
+      </Principal>
+      <Dependent Role="Becado">
+        <PropertyRef Name="Escuela_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Becado_Mensualidades">
+    <End Role="Mensualidades" Type="Self.Mensualidades" Multiplicity="1" />
+    <End Role="Becado" Type="Self.Becado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mensualidades">
+        <PropertyRef Name="Categoria" />
+      </Principal>
+      <Dependent Role="Becado">
+        <PropertyRef Name="Categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Becado_Organizacion">
+    <End Role="Organizacion" Type="Self.Organizacion" Multiplicity="1" />
+    <End Role="Becado" Type="Self.Becado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organizacion">
+        <PropertyRef Name="Organizacion_ID" />
+      </Principal>
+      <Dependent Role="Becado">
+        <PropertyRef Name="Organizacion_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Becado_Tutor">
+    <End Role="Tutor" Type="Self.Tutor" Multiplicity="1" />
+    <End Role="Becado" Type="Self.Becado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tutor">
+        <PropertyRef Name="Tutor_ID" />
+      </Principal>
+      <Dependent Role="Becado">
+        <PropertyRef Name="Tutor_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Horario_Becado">
+    <End Role="Becado" Type="Self.Becado" Multiplicity="1" />
+    <End Role="Horario" Type="Self.Horario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Becado">
+        <PropertyRef Name="Becado_ID" />
+      </Principal>
+      <Dependent Role="Horario">
+        <PropertyRef Name="Becado_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HorasReportadas_Becado">
+    <End Role="Becado" Type="Self.Becado" Multiplicity="1" />
+    <End Role="HorasReportadas" Type="Self.HorasReportadas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Becado">
+        <PropertyRef Name="Becado_ID" />
+      </Principal>
+      <Dependent Role="HorasReportadas">
+        <PropertyRef Name="Becario_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pagos_Becado">
+    <End Role="Becado" Type="Self.Becado" Multiplicity="1" />
+    <End Role="Pagos" Type="Self.Pagos" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Becado">
+        <PropertyRef Name="Becado_ID" />
+      </Principal>
+      <Dependent Role="Pagos">
+        <PropertyRef Name="Becado_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Horario_Organizacion">
+    <End Role="Organizacion" Type="Self.Organizacion" Multiplicity="1" />
+    <End Role="Horario" Type="Self.Horario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organizacion">
+        <PropertyRef Name="Organizacion_ID" />
+      </Principal>
+      <Dependent Role="Horario">
+        <PropertyRef Name="Organizacion_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tutor_Trabajo">
+    <End Role="Trabajo" Type="Self.Trabajo" Multiplicity="0..1" />
+    <End Role="Tutor" Type="Self.Tutor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trabajo">
+        <PropertyRef Name="Nombre" />
+      </Principal>
+      <Dependent Role="Tutor">
+        <PropertyRef Name="Trabajo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PamelaFundacionEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Beca" EntityType="Self.Beca" />
+    <EntitySet Name="Becado" EntityType="Self.Becado" />
+    <EntitySet Name="Escuela" EntityType="Self.Escuela" />
+    <EntitySet Name="Horario" EntityType="Self.Horario" />
+    <EntitySet Name="HorasReportadas" EntityType="Self.HorasReportadas" />
+    <EntitySet Name="Mensualidades" EntityType="Self.Mensualidades" />
+    <EntitySet Name="Organizacion" EntityType="Self.Organizacion" />
+    <EntitySet Name="Pagos" EntityType="Self.Pagos" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Trabajo" EntityType="Self.Trabajo" />
+    <EntitySet Name="Tutor" EntityType="Self.Tutor" />
+    <AssociationSet Name="FK_Beca_Escuela" Association="Self.FK_Beca_Escuela">
+      <End Role="Escuela" EntitySet="Escuela" />
+      <End Role="Beca" EntitySet="Beca" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Becado_Escuela" Association="Self.FK_Becado_Escuela">
+      <End Role="Escuela" EntitySet="Escuela" />
+      <End Role="Becado" EntitySet="Becado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Becado_Mensualidades" Association="Self.FK_Becado_Mensualidades">
+      <End Role="Mensualidades" EntitySet="Mensualidades" />
+      <End Role="Becado" EntitySet="Becado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Becado_Organizacion" Association="Self.FK_Becado_Organizacion">
+      <End Role="Organizacion" EntitySet="Organizacion" />
+      <End Role="Becado" EntitySet="Becado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Becado_Tutor" Association="Self.FK_Becado_Tutor">
+      <End Role="Tutor" EntitySet="Tutor" />
+      <End Role="Becado" EntitySet="Becado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Horario_Becado" Association="Self.FK_Horario_Becado">
+      <End Role="Becado" EntitySet="Becado" />
+      <End Role="Horario" EntitySet="Horario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HorasReportadas_Becado" Association="Self.FK_HorasReportadas_Becado">
+      <End Role="Becado" EntitySet="Becado" />
+      <End Role="HorasReportadas" EntitySet="HorasReportadas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pagos_Becado" Association="Self.FK_Pagos_Becado">
+      <End Role="Becado" EntitySet="Becado" />
+      <End Role="Pagos" EntitySet="Pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Horario_Organizacion" Association="Self.FK_Horario_Organizacion">
+      <End Role="Organizacion" EntitySet="Organizacion" />
+      <End Role="Horario" EntitySet="Horario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tutor_Trabajo" Association="Self.FK_Tutor_Trabajo">
+      <End Role="Trabajo" EntitySet="Trabajo" />
+      <End Role="Tutor" EntitySet="Tutor" />
+    </AssociationSet>
+    <FunctionImport Name="BecadoPorEscuela" ReturnType="Collection(PamelaFundacionModel.BecadoPorEscuela_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="BecadoPorOrganzacion" ReturnType="Collection(PamelaFundacionModel.BecadoPorOrganzacion_Result)">
+      <Parameter Name="Organizacion" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="BecadoPorTutor" ReturnType="Collection(PamelaFundacionModel.BecadoPorTutor_Result)">
+      <Parameter Name="IDTutor" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="BecadoPorTutorNombre" ReturnType="Collection(PamelaFundacionModel.BecadoPorTutorNombre_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DatosBecado" ReturnType="Collection(PamelaFundacionModel.DatosBecado_Result)">
+      <Parameter Name="IDBecado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DatosBecadoPorNombre" ReturnType="Collection(PamelaFundacionModel.DatosBecadoPorNombre_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="DatosTutor" ReturnType="Collection(PamelaFundacionModel.DatosTutor_Result)">
+      <Parameter Name="IDTutor" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="DatosTutorPorNombre" ReturnType="Collection(PamelaFundacionModel.DatosTutorPorNombre_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HorarioBecado" ReturnType="Collection(PamelaFundacionModel.HorarioBecado_Result)">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="ApellidoPaterno" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HorasBecario" ReturnType="Collection(PamelaFundacionModel.HorasBecario_Result)">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Apellido" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="PagosBecado">
+      <Parameter Name="Becario_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PagosBecarios" ReturnType="Collection(PamelaFundacionModel.PagosBecarios_Result)" />
+    <FunctionImport Name="PagosPorBecado" ReturnType="Collection(PamelaFundacionModel.PagosPorBecado_Result)">
+      <Parameter Name="var" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(PamelaFundacionModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(PamelaFundacionModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="TotalBecaPorFamilia" ReturnType="Collection(PamelaFundacionModel.TotalBecaPorFamilia_Result)">
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="ApellidoPaterno" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="BecadoPorEscuela_Result">
+    <Property Type="Int32" Name="Becado_ID" Nullable="false" />
+    <Property Type="Int32" Name="Tutor_ID" Nullable="false" />
+    <Property Type="Int32" Name="Escuela_ID" Nullable="false" />
+    <Property Type="Int32" Name="Organizacion_ID" Nullable="false" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" />
+    <Property Type="String" Name="Edad" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Categoria" Nullable="false" MaxLength="20" />
+    <Property Type="Double" Name="Promedio" Nullable="false" />
+    <Property Type="Int32" Name="Horas" Nullable="false" />
+    <Property Type="String" Name="Actividad" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Escuela_ID1" Nullable="false" />
+    <Property Type="String" Name="Nombre1" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="BecadoPorOrganzacion_Result">
+    <Property Type="String" Name="Organizacion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="Horas" Nullable="false" />
+    <Property Type="String" Name="Actividad" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="BecadoPorTutor_Result">
+    <Property Type="Int32" Name="Becado_ID" Nullable="false" />
+    <Property Type="Int32" Name="Tutor_ID" Nullable="false" />
+    <Property Type="Int32" Name="Escuela_ID" Nullable="false" />
+    <Property Type="Int32" Name="Organizacion_ID" Nullable="false" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" />
+    <Property Type="String" Name="Edad" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Categoria" Nullable="false" MaxLength="20" />
+    <Property Type="Double" Name="Promedio" Nullable="false" />
+    <Property Type="Int32" Name="Horas" Nullable="false" />
+    <Property Type="String" Name="Actividad" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Tutor_ID1" Nullable="false" />
+    <Property Type="String" Name="Nombre1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Trabajo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Puesto" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Correo" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Celular" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="TotalFamilia" Nullable="false" />
+    <Property Type="Int32" Name="HorasFamilia" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="BecadoPorTutorNombre_Result">
+    <Property Type="Int32" Name="Becado_ID" Nullable="false" />
+    <Property Type="Int32" Name="Tutor_ID" Nullable="false" />
+    <Property Type="Int32" Name="Escuela_ID" Nullable="false" />
+    <Property Type="Int32" Name="Organizacion_ID" Nullable="false" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" />
+    <Property Type="String" Name="Edad" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Categoria" Nullable="false" MaxLength="20" />
+    <Property Type="Double" Name="Promedio" Nullable="false" />
+    <Property Type="Int32" Name="Horas" Nullable="false" />
+    <Property Type="String" Name="Actividad" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Tutor_ID1" Nullable="false" />
+    <Property Type="String" Name="Nombre1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Trabajo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Puesto" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Correo" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Celular" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Direccion" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="TotalFamilia" Nullable="false" />
+    <Property Type="Int32" Name="HorasFamilia" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="DatosBecado_Result">
+    <Property Type="Int32" Name="Becado_ID" Nullable="false" />
+    <Property Type="Int32" Name="Tutor_ID" Nullable="false" />
+    <Property Type="Int32" Name="Escuela_ID" Nullable="false" />
+    <Property Type="Int32" Name="Organizacion_ID" Nullable="false" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" />
+    <Property Type="String" Name="Edad" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Categoria" Nullable="false" MaxLength="20" />
+    <Property Type="Double" Name="Promedio" Nullable="false" />
+    <Property Type="Int32" Name="Horas" Nullable="false" />
+    <Property Type="String" Name="Actividad" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="DatosBecadoPorNombre_Result">
+    <Property Type="Int32" Name="Becado_ID" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="DatosTutor_Result">
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Tutor_ID" Nullable="false" />
+    <Property Type="String" Name="Nombre1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Trabajo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Puesto" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Correo" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Telefono1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Celular" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Direccion1" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="TotalFamilia" Nullable="false" />
+    <Property Type="Int32" Name="HorasFamilia" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="DatosTutorPorNombre_Result">
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Tutor_ID" Nullable="false" />
+    <Property Type="String" Name="Nombre1" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Trabajo" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Puesto" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Correo" Nullable="true" MaxLength="256" />
+    <Property Type="String" Name="Telefono1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Celular" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Direccion1" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="TotalFamilia" Nullable="false" />
+    <Property Type="Int32" Name="HorasFamilia" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="HorarioBecado_Result">
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Organizacion" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Actividad" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Lu" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Ma" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Mi" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Ju" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Vi" Nullable="true" MaxLength="2" />
+    <Property Type="String" Name="Sa" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Horas" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="HorasBecario_Result">
+    <Property Type="Int32" Name="Becado_ID" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="NombreOrganizacion" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="HorasTotal" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="PagosBecarios_Result">
+    <Property Type="Int32" Name="Becado_ID" Nullable="false" />
+    <Property Type="String" Name="Categoria" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Total" Nullable="false" />
+    <Property Type="Int32" Name="Mensualidad1" Nullable="true" />
+    <Property Type="Boolean" Name="Mensualidad1_pag" Nullable="true" />
+    <Property Type="Int32" Name="Mensualidad2" Nullable="true" />
+    <Property Type="Boolean" Name="Mensualidad2_pag" Nullable="true" />
+    <Property Type="Int32" Name="Mensualidad3" Nullable="true" />
+    <Property Type="Boolean" Name="Mensualidad3_pag" Nullable="true" />
+    <Property Type="Int32" Name="Mensualidad4" Nullable="true" />
+    <Property Type="Boolean" Name="Mensualidad4_pag" Nullable="true" />
+    <Property Type="Int32" Name="Mensualidad5" Nullable="true" />
+    <Property Type="Boolean" Name="Mensualidad5_pag" Nullable="true" />
+    <Property Type="Int32" Name="Becado_ID1" Nullable="false" />
+    <Property Type="Int32" Name="Tutor_ID" Nullable="false" />
+    <Property Type="Int32" Name="Escuela_ID" Nullable="false" />
+    <Property Type="Int32" Name="Organizacion_ID" Nullable="false" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" />
+    <Property Type="String" Name="Edad" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Categoria1" Nullable="false" MaxLength="20" />
+    <Property Type="Double" Name="Promedio" Nullable="false" />
+    <Property Type="Int32" Name="Horas" Nullable="false" />
+    <Property Type="String" Name="Actividad" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="PagosPorBecado_Result">
+    <Property Type="Int32" Name="Becado_ID" Nullable="false" />
+    <Property Type="String" Name="Categoria" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Total" Nullable="false" />
+    <Property Type="Int32" Name="Mensualidad1" Nullable="true" />
+    <Property Type="Boolean" Name="Mensualidad1_pag" Nullable="true" />
+    <Property Type="Int32" Name="Mensualidad2" Nullable="true" />
+    <Property Type="Boolean" Name="Mensualidad2_pag" Nullable="true" />
+    <Property Type="Int32" Name="Mensualidad3" Nullable="true" />
+    <Property Type="Boolean" Name="Mensualidad3_pag" Nullable="true" />
+    <Property Type="Int32" Name="Mensualidad4" Nullable="true" />
+    <Property Type="Boolean" Name="Mensualidad4_pag" Nullable="true" />
+    <Property Type="Int32" Name="Mensualidad5" Nullable="true" />
+    <Property Type="Boolean" Name="Mensualidad5_pag" Nullable="true" />
+    <Property Type="Int32" Name="Becado_ID1" Nullable="false" />
+    <Property Type="Int32" Name="Tutor_ID" Nullable="false" />
+    <Property Type="Int32" Name="Escuela_ID" Nullable="false" />
+    <Property Type="Int32" Name="Organizacion_ID" Nullable="false" />
+    <Property Type="DateTime" Name="FechaNacimiento" Nullable="false" />
+    <Property Type="String" Name="Edad" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Categoria1" Nullable="false" MaxLength="20" />
+    <Property Type="Double" Name="Promedio" Nullable="false" />
+    <Property Type="Int32" Name="Horas" Nullable="false" />
+    <Property Type="String" Name="Actividad" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="TotalBecaPorFamilia_Result">
+    <Property Type="Int32" Name="Tutor_ID" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="TotalFamilia" Nullable="true" />
+  </ComplexType>
+</Schema>

@@ -1,0 +1,120 @@
+﻿@model PamelaFundacionFinal.Models.Becado
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Favor de confirmar que desea eliminar lo siguiente:</h3>
+<div>
+    <h4>Becado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoPaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoPaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoMaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoMaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Promedio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promedio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Horas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Escuela.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Escuela.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidades.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidades.Categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organizacion.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizacion.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tutor.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tutor.Nombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Cancelar", "Index", new { @class="btn btn-default" })
+        </div>
+    }
+</div>

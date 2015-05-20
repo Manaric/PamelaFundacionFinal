@@ -1,0 +1,146 @@
+﻿@model IEnumerable<PamelaFundacionFinal.Models.Pagos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Pagos de Becados</h2>
+
+@{var becado = new PamelaFundacionFinal.Models.Becado();}
+@{var becadoModel = new PamelaFundacionFinal.Models.Pagos();}
+
+ 
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Apellido
+        </th>
+        <th>
+            Primer mensualidad
+        </th>
+        <th>
+            Pagada
+        </th>
+        <th>
+            Segunda mensualidad
+        </th>
+        <th>
+            Pagada
+        </th>
+        <th>
+            Tercera mensualidad
+        </th>
+        <th>
+            Pagada
+        </th>
+        <th>
+            Cuarta mensualidad
+        </th>
+        <th>
+            Pagada
+        </th>
+        <th>
+            Quinta mensualidad
+        </th>
+        <th>
+            Pagada
+        </th>
+        <!--<th>
+        @Html.DisplayNameFor(model => model.Becado.Edad)
+    </th>-->
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <!--Para obtener el Nombre del becado-->
+        <td>
+            @Html.DisplayFor(modelItem => item.Becado.Nombre)
+            <!--Para obtener el Nombre del becado-->
+        <td>
+            @Html.DisplayFor(modelItem => item.Becado.ApellidoPaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mensualidad1)
+        </td>
+        <td>
+            @if ((bool)item.Mensualidad1_pag == true)
+            {
+                <p>Si</p>
+            }
+            else
+            {
+                <p><b>No</b></p>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mensualidad2)
+        </td>
+        <td>
+            @if ((bool)item.Mensualidad1_pag == true)
+            {
+                <p>Si</p>
+            }
+            else
+            {
+                <p><b>No</b></p>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mensualidad3)
+        </td>
+        <td>
+            @if ((bool)item.Mensualidad1_pag == true)
+            {
+                <p>Si</p>
+            }
+            else
+            {
+                <p><b>No</b></p>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mensualidad4)
+        </td>
+        <td>
+            @if ((bool)item.Mensualidad1_pag == true)
+            {
+                <p>Si</p>
+            }
+            else
+            {
+                <p><b>No</b></p>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mensualidad5)
+        </td>
+        <td>
+            @if ((bool)item.Mensualidad1_pag == true)
+            {
+                <p>Si</p>
+            }
+            else
+            {
+                <p><b>No</b></p>
+            }
+        </td>
+        <!--<td>
+        @Html.DisplayFor(modelItem => item.Becado.Edad)
+    </td>-->
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { item.Becado_ID }, new { @class = "btn btn-default" })
+            @Html.ActionLink("Details", "Details", new { item.Becado_ID }, new { @class = "btn btn-default" })
+            @Html.ActionLink("Delete", "Delete", new { item.Becado_ID }, new { @class = "btn btn-default" })
+        </td>
+    </tr>
+}
+
+</table>

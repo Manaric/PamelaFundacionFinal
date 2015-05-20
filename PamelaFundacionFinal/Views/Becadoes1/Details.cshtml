@@ -1,0 +1,122 @@
+﻿@model PamelaFundacionFinal.Models.Becado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Becado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoPaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoPaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApellidoMaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoMaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Promedio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promedio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Horas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Escuela.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Escuela.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidades.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidades.Categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organizacion.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizacion.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tutor.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tutor.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pagos.Becado_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pagos.Becado_ID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Becado_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

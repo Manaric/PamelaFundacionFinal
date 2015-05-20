@@ -1,0 +1,114 @@
+﻿@model PamelaFundacionFinal.Models.Pagos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pagos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidad1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidad1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidad1_pag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidad1_pag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidad2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidad2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidad2_pag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidad2_pag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidad3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidad3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidad3_pag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidad3_pag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidad4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidad4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidad4_pag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidad4_pag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidad5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidad5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidad5_pag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidad5_pag)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Becado.Edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Becado.Edad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Becado_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

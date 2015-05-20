@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PamelaFundacionFinal.Models.DatosBecadoPorNombre_Result>
+@{
+    ViewBag.Title = "Becario";
+}
+
+<h2>Búsqueda de Becado</h2>
+
+<form action="/Search/Becario">
+    <br>
+    <input type="text" name="buscar" value="" class="btn btn-default">
+    <br><br>
+    <input type="submit" value="Aceptar" class="btn btn-default">
+</form>
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Becado ID
+        </th>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Apellido Paterno
+        </th>
+        <th>
+            Apellido Materno
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var p in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => p.Becado_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => p.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => p.ApellidoPaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => p.ApellidoMaterno)
+            </td>
+            <td>
+                @Html.ActionLink("Ver Pagos", "/Pagos/Index", new { id = p.Becado_ID}, new { @class = "btn btn-default" })
+            </td>
+        </tr>
+    }
+
+</table>
+

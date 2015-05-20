@@ -1,0 +1,116 @@
+﻿@model PamelaFundacionFinal.Models.Becado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Becado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Fecha de Nacimiento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            Apellido Paterno
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoPaterno)
+        </dd>
+
+        <dt>
+            Apellido Materno
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApellidoMaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Promedio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promedio)
+        </dd>
+
+        <dt>
+            Horas a realizar
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Horas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Escuela.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Escuela.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mensualidades.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mensualidades.Categoria)
+        </dd>
+
+        <dt>
+            Organizacion
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizacion.Nombre)
+        </dd>
+
+        <dt>
+            Nombre del tutor
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tutor.Nombre) @Html.DisplayFor(model => model.Tutor.ApellidoPaterno) 
+        </dd>
+        <dd>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.Becado_ID }, new { @class = "btn btn-default" })
+        </dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Mostrar todos", "Index")
+</p>
